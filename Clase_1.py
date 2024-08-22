@@ -7,15 +7,15 @@ import random
 def mostrar_matriz(matriz,estudiantes,materias):
     print('Calificaciones de los estudiantes:')
     print("Alumno    ",end=" ") #Acomoda los nombres de las materias, alejados de los nombress
-    for materia in materias[1:]:
+    for materia in materias:
         print(f'{materia:>10}',end="") #Alinea las materias a la derecha
     print() #Hace un salto de linea 
-    print('-'*50)
+    print('-'*60)
 
     i=0    #Nos sirve como un contador, ingresar a cada valor del estudiante
     for estudiante in estudiantes: 
         print(f'{estudiante:>8}',end="") # Alinea el nombre de estudiante
-        for calificacion in matriz[i][1:]:
+        for calificacion in matriz[i]:
             print(f'{calificacion:>10}',end="") #Alinea las calificaciones
         print()
         i +=1
