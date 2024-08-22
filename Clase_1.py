@@ -5,16 +5,18 @@ import random
 #Mostrar_matriz
 
 def mostrar_matriz(matriz,estudiantes,materias):
-    print("    ",end=" ") #Acomoda los nombres de las materias, alejados de los nombress
-    for materia in materias:
-        print(materia, end=" ")
+    print('Calificaciones de los estudiantes:')
+    print("Alumno    ",end=" ") #Acomoda los nombres de las materias, alejados de los nombress
+    for materia in materias[1:]:
+        print(f'{materia:>10}',end="") #Alinea las materias a la derecha
     print() #Hace un salto de linea 
+    print('-'*50)
 
     i=0    #Nos sirve como un contador, ingresar a cada valor del estudiante
     for estudiante in estudiantes: 
-        print(estudiante, end=" ") # Impresión de los nombres de los estudiantes
-        for calificacion in matriz[i]:
-            print(calificacion, end=" ") #Impresión de calificaciones
+        print(f'{estudiante:>8}',end="") # Alinea el nombre de estudiante
+        for calificacion in matriz[i][1:]:
+            print(f'{calificacion:>10}',end="") #Alinea las calificaciones
         print()
         i +=1
 
@@ -34,9 +36,9 @@ def calcular_promedio_estudiantes(matriz):
 
 #Programa principal
 
+materias = ["Mate1","Ingles2","Lengua4","Psico9","Taller8"]
 estudiantes = ["juan","lisy","martin","joaco"]
 
-materias = ["M1","I2","L4","P9","T8"]
 
 n = len(estudiantes)
 m = len(materias)
