@@ -31,7 +31,19 @@ def calcular_promedio_estudiantes(matriz):
             suma_total += matriz[i][j]
             suma_filas[i] += matriz[i][j]
 
-    promedio = [suma / columnas for suma in suma_filas]
+    promedio = [suma / columnas for suma in suma_filas] #Calcula el promedio de cada estudiante dividiendo su suma por el número de materias.
+    return promedio # Devuelve la lista de promedios de los estudiantes
+
+def calcular_promedio_materias(matriz):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+    suma_columnas = [0]*columnas
+
+    for i in range(filas):
+        for j in range(columnas):
+            suma_columnas[j] += matriz[i][j]
+    
+    promedio = [suma/filas for suma in suma_columnas]
     return promedio
 
 #Programa principal
@@ -51,3 +63,5 @@ for fil in range(n):
 mostrar_matriz(matriznxm,estudiantes,materias) #Llamado de función mostrar_matriz
 promedio = calcular_promedio_estudiantes(matriznxm)
 print("Promedio de cada estudiante", promedio)
+promedio_materias = calcular_promedio_materias(matriznxm)
+print('Promedio de cada materia', promedio_materias)
